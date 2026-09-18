@@ -32,3 +32,9 @@ This keeps routine website maintenance close to zero.
 - [ChatGPT Completion Sound](https://github.com/JoelMomo/chatgpt-completion-sound)
 
 The repository also stores the 1280×640 social-preview asset used by the site.
+
+## Support development
+
+These projects are free to use and developed in my spare time. If they've been useful to you, you can support future development through [GitHub Sponsors](https://github.com/sponsors/JoelMomo) or leave a [one-time tip on Ko-fi](https://ko-fi.com/joelmomodev).
+
+All projects remain free regardless of support.
