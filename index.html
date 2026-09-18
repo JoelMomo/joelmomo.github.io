@@ -1,105 +1,70 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#081013">
-  <meta name="description" content="Small Android tools built around the AYN Thor.">
-  <meta property="og:title" content="JoelMomo · Thor apps">
-  <meta property="og:description" content="Small Android tools built around the AYN Thor.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://joelmomo.github.io/">
-  <meta property="og:image" content="https://joelmomo.github.io/assets/social-preview.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>JoelMomo · Thor apps</title>
-  <style>
-    :root{color-scheme:dark;--bg:#081013;--surface:#111a1d;--line:#253438;--text:#f2f7f6;--muted:#9aabaa;--teal:#72e0ce;--apricot:#e2ae8b;--purple:#a78bfa}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 90% 0,rgba(114,224,206,.11),transparent 30rem),radial-gradient(circle at 10% 70%,rgba(167,139,250,.08),transparent 28rem),var(--bg);color:var(--text);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    a{color:inherit}.shell{width:min(1160px,calc(100% - 36px));margin:auto}.hero{padding:88px 0 58px;max-width:850px}.eyebrow{color:var(--teal);font-size:12px;font-weight:800;letter-spacing:.18em}.hero h1{margin:12px 0 22px;font-size:clamp(46px,8vw,86px);line-height:.98;letter-spacing:-.055em}.hero h1 span{color:var(--teal)}.lede{max-width:700px;color:#b6c3c2;font-size:19px}
-    .apps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{min-height:400px;display:flex;flex-direction:column;padding:24px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.014));box-shadow:0 18px 70px rgba(0,0,0,.18)}.wifi{--accent:var(--teal)}.carepad{--accent:var(--apricot)}.runeboard{--accent:var(--purple)}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:28px}.mark{width:48px;height:48px;display:grid;place-items:center;border-radius:14px;border:1px solid color-mix(in srgb,var(--accent) 48%,transparent);background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-size:25px;font-weight:800}.status{padding:6px 9px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:12px;font-weight:750}.card h2{margin:0 0 10px;font-size:27px;letter-spacing:-.03em}.card p{color:#aebdbc}.card ul{padding-left:19px;color:#d4dcdb}.card li+li{margin-top:6px}.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:22px}.links a,.button{padding:9px 12px;border:1px solid var(--line);border-radius:11px;text-decoration:none;font-weight:700}.links a{color:var(--accent)}.button{display:inline-block;margin-top:26px;background:var(--teal);border-color:var(--teal);color:#071311}
-    .changes{padding:88px 0 76px}.heading{display:flex;justify-content:space-between;align-items:end;gap:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}.heading h2{margin:7px 0 0;font-size:38px;letter-spacing:-.04em}.timeline{min-height:120px}.entry{display:grid;grid-template-columns:140px 1fr 1.35fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}.entry time,.empty{color:var(--muted);font-size:13px}.entry h3,.entry p{margin:0}.entry p{color:#9fb0af}.entry a{text-underline-offset:3px}.empty{padding:28px 0;border-bottom:1px solid var(--line)}
-    footer{display:flex;justify-content:space-between;gap:18px;padding:25px 0 42px;border-top:1px solid var(--line);color:#718584;font-size:13px}
-    @media(max-width:900px){.apps{grid-template-columns:1fr}.card{min-height:auto}.entry{grid-template-columns:1fr;gap:7px}}@media(max-width:580px){.hero{padding-top:58px}.shell{width:min(100% - 26px,1160px)}.heading,footer{align-items:flex-start;flex-direction:column}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070b14">
+<meta name="description" content="Thor apps and small utilities by JoelMomo.">
+<meta property="og:title" content="JoelMomo · Apps & tools">
+<meta property="og:description" content="Thor apps, browser tools and automatic release tracking.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://joelmomo.github.io/">
+<meta property="og:image" content="https://joelmomo.github.io/assets/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<title>JoelMomo · Apps & tools</title>
+<style>
+:root{color-scheme:dark;--bg:#070b14;--panel:rgba(13,20,38,.64);--line:rgba(170,190,255,.15);--line2:rgba(170,190,255,.3);--text:#f4f7ff;--muted:#a6b1ce;--cyan:#67e8f9;--blue:#7dd3fc;--violet:#a78bfa;--pink:#f472b6;--orange:#f7b267;--green:#34d399;--r:24px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:linear-gradient(180deg,#070b14,#090e1a 52%,#070b14);overflow-x:hidden}a{color:inherit;text-decoration:none}
+.bg{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}.bg:before{content:"";position:absolute;inset:-15%;background:radial-gradient(circle at 18% 20%,rgba(103,232,249,.2),transparent 23%),radial-gradient(circle at 82% 18%,rgba(167,139,250,.2),transparent 27%),radial-gradient(circle at 55% 72%,rgba(244,114,182,.1),transparent 22%),radial-gradient(circle at 82% 78%,rgba(52,211,153,.09),transparent 18%);filter:blur(34px);animation:fog 16s ease-in-out infinite alternate}.bg:after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.55),transparent 82%);opacity:.45}
+@keyframes fog{0%{transform:translate3d(-2%,0,0) scale(1)}100%{transform:translate3d(2%,-2%,0) scale(1.07)}}@keyframes pulse{50%{box-shadow:0 0 34px rgba(103,232,249,.75)}}@keyframes sweep{0%{transform:translateX(-140%)}100%{transform:translateX(180%)}}
+.wrap{width:min(1210px,calc(100% - 32px));margin:auto}.nav{position:sticky;top:0;z-index:10;padding:15px 0;background:linear-gradient(180deg,rgba(7,11,20,.88),rgba(7,11,20,.38));backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.04)}.navin{display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:-.03em}.mark{width:34px;height:34px;border:1px solid var(--line2);border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(103,232,249,.2),rgba(167,139,250,.2));box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}.links{display:flex;gap:9px;flex-wrap:wrap}.links a,.btn{padding:9px 13px;border:1px solid var(--line);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.03);transition:.2s}.links a:hover,.btn:hover{transform:translateY(-1px);color:var(--text);border-color:var(--line2);background:rgba(255,255,255,.06)}
+.hero{padding:72px 0 42px}.heroBox{position:relative;overflow:hidden;padding:42px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(180deg,rgba(20,29,54,.78),rgba(10,15,29,.56));backdrop-filter:blur(20px);box-shadow:0 25px 100px rgba(0,0,0,.34)}.heroBox:after{content:"";position:absolute;inset:0 auto 0 0;width:38%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent);animation:sweep 9s linear infinite;opacity:.3}.eyebrow{display:flex;align-items:center;gap:8px;margin-bottom:14px;color:var(--cyan);font-size:12px;font-weight:850;letter-spacing:.18em}.dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 18px rgba(103,232,249,.65);animation:pulse 3s ease-in-out infinite}.hero h1{position:relative;z-index:1;margin:0 0 18px;max-width:900px;font-size:clamp(46px,8vw,88px);line-height:.95;letter-spacing:-.065em}.grad{background:linear-gradient(90deg,var(--blue),var(--cyan),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{position:relative;z-index:1;margin:0;max-width:780px;color:#bec9e3;font-size:19px;line-height:1.55}.actions,.stats,.foot,.tags{display:flex;flex-wrap:wrap;gap:11px}.actions{position:relative;z-index:1;margin-top:27px}.btn.primary{font-weight:850;color:#071018;border-color:transparent;background:linear-gradient(135deg,var(--cyan),var(--blue));box-shadow:0 12px 38px rgba(103,232,249,.2)}.stats{position:relative;z-index:1;margin-top:28px}.stat{min-width:148px;padding:13px 15px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.03)}.stat b{display:block;font-size:24px;letter-spacing:-.04em}.stat span{color:var(--muted);font-size:13px}
+.section{padding:38px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:18px}.head h2{margin:5px 0 0;font-size:clamp(29px,4vw,40px);letter-spacing:-.055em}.head p{margin:0;max-width:680px;color:var(--muted)}.smallnote{font-size:13px;color:#7f8baa}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.cards.other{grid-template-columns:repeat(2,minmax(0,1fr))}.card{--glow:rgba(103,232,249,.18);position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:390px;padding:22px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,rgba(255,255,255,.047),rgba(255,255,255,.02));backdrop-filter:blur(18px);box-shadow:0 20px 78px rgba(0,0,0,.3);transition:.23s}.card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0%,var(--glow),transparent 37%);pointer-events:none}.card:hover{transform:translateY(-6px);border-color:var(--line2);box-shadow:0 30px 95px rgba(0,0,0,.38)}.card.wifi{--glow:rgba(103,232,249,.24)}.card.care{--glow:rgba(247,178,103,.2)}.card.rune{--glow:rgba(167,139,250,.24)}.card.sound{--glow:rgba(52,211,153,.2)}.top{position:relative;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:23px}.icon{width:53px;height:53px;border:1px solid rgba(255,255,255,.1);border-radius:17px;display:grid;place-items:center;background:rgba(255,255,255,.06);font-size:27px;box-shadow:inset 0 1px 0 rgba(255,255,255,.09)}.status{padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);color:var(--muted);font-size:11px;font-weight:850;letter-spacing:.04em;text-transform:uppercase}.status.avail{color:#baffeb;border-color:rgba(52,211,153,.34);background:rgba(52,211,153,.08)}.status.beta{color:#d1f6ff;border-color:rgba(103,232,249,.34);background:rgba(103,232,249,.08)}.status.dev{color:#ffddb7;border-color:rgba(247,178,103,.34);background:rgba(247,178,103,.08)}.card h3{position:relative;margin:0 0 10px;font-size:28px;letter-spacing:-.045em}.card>p{position:relative;margin:0;color:#bbc6df;line-height:1.5}.features{position:relative;display:grid;gap:10px;list-style:none;margin:18px 0 22px;padding:0}.features li{display:flex;gap:9px;color:#dbe3f5}.features li:before{content:"✦";color:var(--cyan)}.tags{position:relative;margin-top:auto}.tag{padding:7px 9px;border:1px solid rgba(170,190,255,.12);border-radius:999px;background:rgba(255,255,255,.03);color:var(--muted);font-size:12px}.foot{position:relative;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.06)}.foot a{padding:9px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.04);transition:.2s}.foot a:hover{transform:translateY(-1px);border-color:var(--line2);background:rgba(255,255,255,.08)}.foot a:first-child{font-weight:850}
+.releaseGrid{display:grid;grid-template-columns:1.22fr .78fr;gap:16px}.glass{padding:22px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));backdrop-filter:blur(18px);box-shadow:0 20px 78px rgba(0,0,0,.3)}.timeline{display:grid;gap:0}.entry{display:grid;grid-template-columns:135px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.06)}.entry:last-child{border-bottom:0}.entry time,.entry .repo{font-size:13px;color:var(--muted)}.entry h4{margin:4px 0 7px;font-size:18px;letter-spacing:-.03em}.entry p{margin:0;color:#c5cfe5;line-height:1.48}.legend{display:grid;gap:13px;align-content:start}.legend div{padding:15px;border:1px solid rgba(255,255,255,.06);border-radius:17px;background:rgba(255,255,255,.03)}.legend b{display:block;margin-bottom:5px}.legend span,.empty{color:var(--muted);font-size:14px}footer{display:flex;justify-content:space-between;gap:18px;padding:36px 0 52px;color:#7f8baa;font-size:13px}
+@media(max-width:1000px){.cards,.cards.other,.releaseGrid{grid-template-columns:1fr}.heroBox{padding:29px}.entry{grid-template-columns:1fr;gap:7px}}@media(max-width:720px){.navin,.head,footer{align-items:flex-start;flex-direction:column}.hero{padding-top:42px}.hero h1{font-size:clamp(43px,14vw,62px)}.hero p{font-size:17px}.wrap{width:min(1210px,calc(100% - 22px))}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.bg:before,.heroBox:after,.dot{animation:none!important}.card,.btn,.links a{transition:none!important}}
+</style>
 </head>
 <body>
-<main class="shell">
-  <header class="hero">
-    <div class="eyebrow">JOELMOMO / ANDROID TOOLS</div>
-    <h1>Small tools for a better <span>AYN Thor</span>.</h1>
-    <p class="lede">Focused Android utilities for recovery, diagnostics and dual-screen input. Open source, device-first and deliberately lightweight.</p>
-    <a class="button" href="#apps">Explore apps</a>
-  </header>
+<div class="bg"></div>
+<nav class="nav"><div class="wrap navin"><a class="brand" href="#top"><span class="mark">✦</span><span>JoelMomo · Apps & tools</span></a><div class="links"><a href="#thor">Thor apps</a><a href="#other">Other tools</a><a href="#releases">Releases</a></div></div></nav>
+<main class="wrap" id="top">
+<section class="hero"><div class="heroBox">
+<div class="eyebrow"><span class="dot"></span>LIGHTWEIGHT · AUTOMATIC · LOW MAINTENANCE</div>
+<h1>Small software, <span class="grad">big handheld energy.</span></h1>
+<p>Focused tools built around the AYN Thor, plus a few extra utilities. The site stays deliberately simple underneath: no framework, no build step, and release data pulled automatically from GitHub.</p>
+<div class="actions"><a class="btn primary" href="#thor">Explore apps</a><a class="btn" href="https://github.com/JoelMomo">GitHub profile</a><a class="btn" href="#releases">Latest releases</a></div>
+<div class="stats"><div class="stat"><b id="projectsN">4</b><span>Public projects shown</span></div><div class="stat"><b id="releasedN">0</b><span>With public release</span></div><div class="stat"><b id="betaN">0</b><span>Active prereleases</span></div></div>
+</div></section>
 
-  <section class="apps" id="apps">
-    <article class="card wifi" data-repo="AYN-Thor-WiFi-Recovery">
-      <div class="top"><div class="mark">↻</div><span class="status">Checking release…</span></div>
-      <h2>Thor Wi-Fi Recovery</h2>
-      <p>Targeted recovery for the intermittent Wi-Fi scan lockup observed on AYN Thor firmware.</p>
-      <ul><li>Adaptive diagnosis and recovery</li><li>Offline and telemetry-free</li><li>Localized interface</li></ul>
-      <div class="links"><a class="primary-link" href="https://github.com/JoelMomo/AYN-Thor-WiFi-Recovery">Source</a></div>
-    </article>
+<section class="section" id="thor"><div class="head"><div><div class="eyebrow"><span class="dot"></span>CORE SUITE</div><h2>Thor apps</h2><p>Android tools built for the AYN Thor ecosystem: recovery, diagnostics and input.</p></div><div class="smallnote">Status and downloads update from GitHub Releases.</div></div><div class="cards" id="thorCards"></div></section>
 
-    <article class="card carepad" data-repo="CarePad">
-      <div class="top"><div class="mark">＋</div><span class="status">Checking release…</span></div>
-      <h2>CarePad</h2>
-      <p>A modular Thor companion app that brings diagnostics and device tools into one controller-friendly shell.</p>
-      <ul><li>Performance diagnostics</li><li>Games &amp; BIOS checks</li><li>Controller/input tools</li></ul>
-      <div class="links"><a class="primary-link" href="https://github.com/JoelMomo/CarePad">Source</a></div>
-    </article>
+<section class="section" id="other"><div class="head"><div><div class="eyebrow"><span class="dot"></span>EXTRAS</div><h2>Other tools</h2><p>Useful side projects that are intentionally kept separate from the Thor app suite.</p></div></div><div class="cards other" id="otherCards"></div></section>
 
-    <article class="card runeboard" data-repo="RuneBoard">
-      <div class="top"><div class="mark">⌨</div><span class="status">Checking release…</span></div>
-      <h2>RuneBoard</h2>
-      <p>A dual-screen Android keyboard designed Thor-first for the lower display, touch and physical controls.</p>
-      <ul><li>Touch + physical controls</li><li>Compact lower-screen mode</li><li>Thor-first interaction model</li></ul>
-      <div class="links"><a class="primary-link" href="https://github.com/JoelMomo/RuneBoard">Source</a></div>
-    </article>
-  </section>
-
-  <section class="changes" id="changelog">
-    <div class="heading"><div><div class="eyebrow">RELEASES</div><h2>What's new</h2></div><a href="https://github.com/JoelMomo?tab=repositories">All repositories</a></div>
-    <div class="timeline" id="timeline"><div class="empty">Loading public releases…</div></div>
-  </section>
-
-  <footer><span>Independent community projects. Not affiliated with AYN.</span><a href="https://github.com/JoelMomo">github.com/JoelMomo</a></footer>
+<section class="section" id="releases"><div class="head"><div><div class="eyebrow"><span class="dot"></span>ACTIVITY</div><h2>Release rail</h2><p>A visual changelog generated from public GitHub Releases. Publishing a new release is enough to update this section.</p></div></div>
+<div class="releaseGrid"><div class="glass"><div class="timeline" id="timeline"><div class="empty">Loading public releases…</div></div></div><aside class="glass legend"><div><b>Public beta</b><span>The newest GitHub Release is marked as a prerelease.</span></div><div><b>Available</b><span>The newest GitHub Release is stable.</span></div><div><b>In development</b><span>No public release exists yet.</span></div></aside></div>
+</section>
 </main>
+<footer class="wrap"><span>Independent community projects. Not affiliated with AYN.</span><a href="https://github.com/JoelMomo">github.com/JoelMomo</a></footer>
 <script>
-const owner="JoelMomo";
-const repos=["AYN-Thor-WiFi-Recovery","CarePad","RuneBoard"];
-const cards=new Map([...document.querySelectorAll("[data-repo]")].map(el=>[el.dataset.repo,el]));
-
-async function releases(repo){
-  const r=await fetch(`https://api.github.com/repos/${owner}/${repo}/releases?per_page=5`,{headers:{Accept:"application/vnd.github+json"}});
-  if(!r.ok) throw new Error(String(r.status));
-  return r.json();
-}
-function dateText(v){return new Intl.DateTimeFormat(undefined,{day:"numeric",month:"short",year:"numeric"}).format(new Date(v))}
-Promise.allSettled(repos.map(async repo=>({repo,items:await releases(repo)}))).then(results=>{
-  const all=[];
-  for(const result of results){
-    if(result.status!=="fulfilled") continue;
-    const {repo,items}=result.value;
-    const card=cards.get(repo), status=card.querySelector(".status"), links=card.querySelector(".links");
-    if(items.length){
-      const latest=items[0];
-      status.textContent=latest.prerelease?"Public beta":"Available";
-      const a=document.createElement("a");a.href=latest.html_url;a.textContent=`Download ${latest.tag_name}`;links.prepend(a);
-      items.forEach(x=>all.push({...x,repo}));
-    }else{
-      status.textContent="In development";
-    }
-  }
-  all.sort((a,b)=>new Date(b.published_at)-new Date(a.published_at));
-  const timeline=document.getElementById("timeline");
-  if(!all.length){timeline.innerHTML='<div class="empty">No public releases yet. This section updates automatically when releases are published.</div>';return}
-  timeline.innerHTML=all.slice(0,6).map(x=>`
-    <article class="entry">
-      <time datetime="${x.published_at}">${dateText(x.published_at)}</time>
-      <h3><a href="${x.html_url}">${x.repo} · ${x.tag_name}</a></h3>
-      <p>${x.name && x.name!==x.tag_name ? x.name : (x.prerelease ? "Public prerelease" : "Public release")}</p>
-    </article>`).join("");
-}).catch(()=>{document.querySelectorAll(".status").forEach(x=>x.textContent="GitHub");document.getElementById("timeline").innerHTML='<div class="empty">Release data is temporarily unavailable. Open the repositories directly for current versions.</div>'});
+var owner='JoelMomo';
+var projects=[
+{repo:'AYN-Thor-WiFi-Recovery',group:'thor',cls:'wifi',icon:'↻',title:'Thor Wi‑Fi Recovery',desc:'Targeted recovery for the intermittent Wi‑Fi scan lockup observed on AYN Thor firmware.',features:['Adaptive diagnosis and recovery','Offline, telemetry-free and firmware-gated','Localized interface and signed public APKs'],tags:['Android app','Thor','Recovery']},
+{repo:'CarePad',group:'thor',cls:'care',icon:'＋',title:'CarePad',desc:'A modular Thor companion app that brings diagnostics and device tools into one controller-friendly shell.',features:['Performance diagnostics','Games & BIOS checks','Controller and input tooling'],tags:['Android app','Thor','Diagnostics']},
+{repo:'RuneBoard',group:'thor',cls:'rune',icon:'⌨',title:'RuneBoard',desc:'A dual-screen Android keyboard designed Thor-first for the lower display, touch and physical controls.',features:['Dual-screen IME concept','Touch + physical control input','Compact lower-screen workflow'],tags:['Android app','Thor','Input']},
+{repo:'chatgpt-completion-sound',group:'other',cls:'sound',icon:'🔔',title:'ChatGPT Completion Sound',desc:'A lightweight browser extension that plays a completion sound and can show a silent notification when ChatGPT finishes responding.',features:['Chrome and Edge support','Per-tab completion tracking','Silent Windows notifications'],tags:['Extension','Browser','Utility']}
+];
+var all=[],released=0,betas=0;
+function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function dateFmt(v){return new Intl.DateTimeFormat(undefined,{day:'numeric',month:'short',year:'numeric'}).format(new Date(v))}
+function statusOf(r){if(!r.length)return{text:'In development',cls:'dev'};return r[0].prerelease?{text:'Public beta',cls:'beta'}:{text:'Available',cls:'avail'}}
+function summary(body){var s=String(body||'').replace(/\[(.*?)\]\((.*?)\)/g,'$1').replace(/[#>*_\x60\-]/g,' ').replace(/\s+/g,' ').trim();return s.length>150?s.slice(0,150)+'…':s}
+function card(p,r){var st=statusOf(r),latest=r[0],repoUrl='https://github.com/'+owner+'/'+p.repo,main=latest?latest.html_url:repoUrl,label=latest?'Download '+latest.tag_name:'Source',meta=latest?'<span class="tag">'+esc(latest.tag_name)+'</span><span class="tag">'+(latest.prerelease?'Prerelease':'Stable release')+'</span>':'<span class="tag">No public release yet</span>';return '<article class="card '+p.cls+'"><div class="top"><div class="icon">'+p.icon+'</div><span class="status '+st.cls+'">'+st.text+'</span></div><h3>'+p.title+'</h3><p>'+p.desc+'</p><ul class="features">'+p.features.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul><div class="tags">'+p.tags.map(function(x){return '<span class="tag">'+esc(x)+'</span>'}).join('')+meta+'</div><div class="foot"><a href="'+main+'">'+esc(label)+'</a><a href="'+repoUrl+'">Source</a></div></article>'}
+async function releases(repo){var res=await fetch('https://api.github.com/repos/'+owner+'/'+repo+'/releases?per_page=6',{headers:{Accept:'application/vnd.github+json'}});if(!res.ok)throw new Error(String(res.status));return res.json()}
+function renderTimeline(){var box=document.getElementById('timeline');if(!all.length){box.innerHTML='<div class="empty">No public releases yet, or GitHub release data is temporarily unavailable.</div>';return}all.sort(function(a,b){return new Date(b.published_at)-new Date(a.published_at)});box.innerHTML=all.slice(0,8).map(function(x){var title=x.name&&x.name!==x.tag_name?x.name:x.tag_name;return '<article class="entry"><div><time>'+dateFmt(x.published_at)+'</time><div class="repo">'+esc(x.repo)+'</div></div><div><h4><a href="'+x.html_url+'">'+esc(title)+'</a></h4><p>'+esc(summary(x.body)||(x.prerelease?'Public prerelease.':'Public release.'))+'</p></div></article>'}).join('')}
+async function boot(){var thor=[],other=[];for(var i=0;i<projects.length;i++){var p=projects[i],r=[];try{r=await releases(p.repo)}catch(e){}if(r.length){released++;if(r[0].prerelease)betas++;r.forEach(function(x){x.repo=p.repo;all.push(x)})}(p.group==='thor'?thor:other).push(card(p,r))}document.getElementById('thorCards').innerHTML=thor.join('');document.getElementById('otherCards').innerHTML=other.join('');document.getElementById('projectsN').textContent=projects.length;document.getElementById('releasedN').textContent=released;document.getElementById('betaN').textContent=betas;renderTimeline()}
+boot();
 </script>
 </body>
 </html>
