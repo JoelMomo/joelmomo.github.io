@@ -1,23 +1,34 @@
 # joelmomo.github.io
 
-Minimal landing page for JoelMomo's public AYN Thor Android projects.
+Landing page for JoelMomo's public apps and small tools.
 
-## Maintenance model
+## Design and maintenance
 
-The page intentionally has no framework, build step or package dependencies.
+The site intentionally uses only static HTML, CSS and JavaScript:
 
-App availability and the visual release log are read directly from the public GitHub Releases API:
-- a repository with no public release appears as **In development**;
-- a prerelease appears as **Public beta**;
-- a stable release appears as **Available**;
-- the release timeline updates itself when a new GitHub Release is published.
+- no framework;
+- no build step;
+- no package dependencies;
+- animated background and glass-style project cards are handled locally with CSS;
+- project availability and the visual release rail are read directly from the public GitHub Releases API.
 
-This keeps routine website maintenance close to zero. A future project only requires adding one card/repository entry.
+Release status is automatic:
 
-## Projects
+- no public release → **In development**;
+- prerelease → **Public beta**;
+- stable release → **Available**;
+- publishing a new GitHub Release automatically updates the release rail and download link.
+
+This keeps routine website maintenance close to zero.
+
+## Thor apps
 
 - [Thor Wi-Fi Recovery](https://github.com/JoelMomo/AYN-Thor-WiFi-Recovery)
 - [CarePad](https://github.com/JoelMomo/CarePad)
 - [RuneBoard](https://github.com/JoelMomo/RuneBoard)
+
+## Other tools
+
+- [ChatGPT Completion Sound](https://github.com/JoelMomo/chatgpt-completion-sound)
 
 The repository also stores the 1280×640 social-preview asset used by the site.
