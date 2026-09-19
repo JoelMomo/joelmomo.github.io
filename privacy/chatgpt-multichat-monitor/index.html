@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070b14">
+<meta name="description" content="Privacy policy for ChatGPT MultiChat Monitor by JoelMomo.">
+<meta property="og:title" content="ChatGPT MultiChat Monitor · Privacy">
+<meta property="og:description" content="How ChatGPT MultiChat Monitor handles data.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://joelmomo.github.io/privacy/chatgpt-multichat-monitor/">
+<title>ChatGPT MultiChat Monitor · Privacy</title>
+<style>
+:root{color-scheme:dark;--bg:#070b14;--panel:#0f1726;--line:#26324a;--text:#f4f7ff;--muted:#a6b1ce;--cyan:#67e8f9;--blue:#7dd3fc;--violet:#a78bfa;--green:#a7f36b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at 15% 10%,rgba(103,232,249,.12),transparent 25%),radial-gradient(circle at 85% 18%,rgba(167,139,250,.12),transparent 28%),linear-gradient(180deg,#070b14,#090e1a 58%,#070b14);line-height:1.62}a{color:var(--cyan)}.wrap{width:min(900px,calc(100% - 32px));margin:auto}.nav{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.06)}.nav a{color:var(--text);text-decoration:none;font-weight:800}.hero{padding:64px 0 26px}.eyebrow{color:var(--cyan);font-size:12px;font-weight:850;letter-spacing:.16em;text-transform:uppercase}.hero h1{margin:10px 0 14px;font-size:clamp(38px,7vw,66px);line-height:1;letter-spacing:-.055em}.hero p{margin:0;color:var(--muted);font-size:18px}.meta{margin-top:18px;color:#7f8baa;font-size:13px}.card{margin:18px 0;padding:24px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));box-shadow:0 22px 70px rgba(0,0,0,.22)}h2{margin:0 0 10px;font-size:24px;letter-spacing:-.035em}h3{margin:20px 0 8px;font-size:17px}p,li{color:#c5cfe5}ul{padding-left:22px}.good{border-color:rgba(167,243,107,.25);background:linear-gradient(180deg,rgba(167,243,107,.055),rgba(255,255,255,.02))}.good strong{color:#dfffc8}.code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:#dbe6ff}.small{font-size:13px;color:var(--muted)}footer{padding:34px 0 54px;color:#7f8baa;font-size:13px;border-top:1px solid rgba(255,255,255,.05);margin-top:34px}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap"><a href="https://joelmomo.github.io/">JoelMomo · Apps & tools</a></div></nav>
+<main class="wrap">
+<section class="hero">
+<div class="eyebrow">Privacy policy</div>
+<h1>ChatGPT MultiChat Monitor</h1>
+<p>This page explains what the extension accesses, what it stores locally, and what—if anything—it sends over the network.</p>
+<div class="meta">Effective: 19 September 2026 · Applies to ChatGPT MultiChat Monitor v0.3.0 and later unless updated.</div>
+</section>
+
+<section class="card good">
+<h2>Summary</h2>
+<p><strong>ChatGPT MultiChat Monitor is local-first and does not use telemetry.</strong> It does not send conversation text, prompts, chat titles, aliases, activity history, or browsing activity to the developer or to an analytics service.</p>
+<p>The extension runs its monitoring logic on <span class="code">chatgpt.com</span>. A small request to GitHub's public releases API may be made at most once every 24 hours to check whether a newer stable version is available.</p>
+</section>
+
+<section class="card">
+<h2>What the extension accesses</h2>
+<p>The extension needs to observe parts of the ChatGPT web interface in order to provide its user-facing monitoring features.</p>
+<ul>
+<li><strong>Generation state:</strong> visible interface signals are used to determine states such as Working, Done, Retry needed, Needs attention, Error, Stopped and Idle.</li>
+<li><strong>Prompt draft state:</strong> the extension checks whether the visible ChatGPT prompt composer contains unsent text so it can show Draft instead of Idle.</li>
+<li><strong>Latest assistant response tail:</strong> when generation finishes, a short tail of the latest assistant response may be inspected locally to make the optional Needs attention classification.</li>
+<li><strong>Open ChatGPT tabs/windows:</strong> tab metadata is used to show the monitor and switch to the selected conversation.</li>
+</ul>
+<p>These accesses are used only to provide the extension's single purpose: monitoring and navigating active ChatGPT conversations across open browser tabs and windows.</p>
+</section>
+
+<section class="card">
+<h2>What is stored locally</h2>
+<p>The extension may store the following in the browser's extension storage on your device:</p>
+<ul>
+<li>Extension settings such as compact mode, sound choices and volume.</li>
+<li>Per-chat aliases, pinned/hidden preferences and manual ordering.</li>
+<li>A small recent-activity history containing a chat title, state and timestamp. It is capped at 100 events and 24 hours.</li>
+<li>Update-check timestamps, the latest known stable version and a dismissed-version marker.</li>
+<li>A one-time acknowledgement state for the What's new notice after an extension update.</li>
+</ul>
+<p>Conversation bodies and prompt text are not stored in the recent-activity history.</p>
+</section>
+
+<section class="card">
+<h2>Network requests and third parties</h2>
+<h3>GitHub</h3>
+<p>The background service worker may request the public latest-release endpoint for <span class="code">JoelMomo/chatgpt-multichat-monitor</span> at most once every 24 hours. The request is used only to detect whether a newer stable release exists.</p>
+<p>The extension does not add conversation data, prompt text, chat titles, aliases or activity history to that request. As with ordinary web requests, GitHub may receive standard connection metadata such as an IP address and user agent under GitHub's own privacy practices.</p>
+<h3>Other services</h3>
+<p>The extension does not use analytics, advertising networks, data brokers, telemetry backends or a developer-operated collection server.</p>
+</section>
+
+<section class="card">
+<h2>Data sharing and sale</h2>
+<p>The developer does not sell user data. The extension does not transfer ChatGPT conversation content or locally stored monitor data to advertisers, data brokers or other third parties.</p>
+</section>
+
+<section class="card">
+<h2>Chrome Web Store Limited Use</h2>
+<p>The use of information received through browser permissions is limited to providing and improving the extension's disclosed single purpose. The extension does not use such information for personalized advertising or creditworthiness, and does not permit humans to read user data collected through the extension.</p>
+<p>The use of information received from Google APIs, if any Google API access is introduced in the future, will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+</section>
+
+<section class="card">
+<h2>Permissions</h2>
+<ul>
+<li><span class="code">storage</span> — stores extension settings and the local metadata described above.</li>
+<li><span class="code">tabs</span> — discovers and focuses open ChatGPT tabs/windows and reads the URL/title metadata needed to identify them.</li>
+<li><span class="code">scripting</span> — reinjects the monitor into already-open ChatGPT tabs after the extension is installed or reloaded.</li>
+<li><span class="code">offscreen</span> — plays local notification sounds in Manifest V3 without keeping an unnecessary visible page open.</li>
+<li><span class="code">https://chatgpt.com/*</span> — limits the content script and page access to ChatGPT.</li>
+</ul>
+</section>
+
+<section class="card">
+<h2>Your controls</h2>
+<p>You can clear recent activity, aliases, pins, hidden-chat state and manual ordering from the extension popup. Browser extension storage is removed when the extension is uninstalled, subject to the browser's own storage behavior.</p>
+<p>You can also disable sound alerts, hide the floating monitor or remove the extension at any time through your browser's extension manager.</p>
+</section>
+
+<section class="card">
+<h2>Security and remote code</h2>
+<p>ChatGPT MultiChat Monitor uses Manifest V3 and does not download or execute remotely hosted JavaScript or other remote executable code. Included notification sounds and extension code are packaged with the extension.</p>
+</section>
+
+<section class="card">
+<h2>Changes to this policy</h2>
+<p>If the extension's data practices materially change, this policy will be updated to reflect the new behavior and the relevant store disclosures will be updated as required.</p>
+</section>
+
+<section class="card">
+<h2>Contact</h2>
+<p>For privacy questions or issues, use the project's public issue tracker:</p>
+<p><a href="https://github.com/JoelMomo/chatgpt-multichat-monitor/issues">github.com/JoelMomo/chatgpt-multichat-monitor/issues</a></p>
+</section>
+</main>
+<footer><div class="wrap">Independent open-source project by JoelMomo · <a href="https://github.com/JoelMomo/chatgpt-multichat-monitor">Source code</a></div></footer>
+</body>
+</html>
