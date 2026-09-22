@@ -86,5 +86,6 @@ function renderTimeline(){var box=document.getElementById('timeline');if(!all.le
 async function boot(){var thor=[],other=[];for(var i=0;i<projects.length;i++){var p=projects[i],r=[];try{r=await releases(p.repo)}catch(e){}if(r.length){released++;if(r[0].prerelease)betas++;r.forEach(function(x){x.repo=p.repo;all.push(x)})}(p.group==='thor'?thor:other).push(card(p,r))}document.getElementById('thorCards').innerHTML=thor.join('');document.getElementById('otherCards').innerHTML=other.join('');document.getElementById('projectsN').textContent=projects.length;document.getElementById('releasedN').textContent=released;document.getElementById('betaN').textContent=betas;renderTimeline()}
 boot();
 </script>
+<!-- portfolio-refresh: 2026-09-23 -->
 </body>
 </html>
