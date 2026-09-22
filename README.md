@@ -1,6 +1,6 @@
 # joelmomo.github.io
 
-Landing page for JoelMomo's public apps and small tools.
+Portfolio and landing page for JoelMomo's public apps and tools.
 
 ## Design and maintenance
 
@@ -21,17 +21,19 @@ Release status is automatic:
 
 This keeps routine website maintenance close to zero.
 
-## Thor apps
+## AYN Thor apps
 
 - [Thor Wi-Fi Recovery](https://github.com/JoelMomo/AYN-Thor-WiFi-Recovery)
 - [CarePad](https://github.com/JoelMomo/CarePad)
 - [RuneBoard](https://github.com/JoelMomo/RuneBoard)
 
-## Other tools
+## ChatGPT and desktop tools
 
+- [ChatGPT MultiChat](https://github.com/JoelMomo/ChatGPT-MultiChat)
+- [ChatGPT MultiChat Monitor](https://github.com/JoelMomo/chatgpt-multichat-monitor)
 - [ChatGPT Completion Sound](https://github.com/JoelMomo/chatgpt-completion-sound)
 
-The repository also stores the 1280×640 social-preview asset used by the site.
+The web Social Preview is deliberately category-based rather than tied to a fixed list of projects, so adding future tools does not require redesigning the image.
 
 <div align="center">
 
